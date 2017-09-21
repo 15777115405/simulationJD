@@ -15,8 +15,9 @@ import Header from '../../widget/Header';
 export default class Homepage extends Component {
     render() {
         return (
-            <View>
-                <Header/>
+            <View style={styles.container}>
+                {/*<Header/>*/}
+                <Text>Homepage</Text>
             </View>
         );
     }
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#F5FCFF',
+        backgroundColor: '#d74047',
     },
     welcome: {
         fontSize: 20,

@@ -15,30 +15,12 @@ import {
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Header from './widget/Header';
+import Category from './scene/Category/Category.js';
+import Cart from './scene/Cart/Cart.js';
+import Find from './scene/Find/Find.js';
+import Personal from './scene/Personal/Personal.js';
+import  Homepage from './scene/Home/Homepage';
 
-class Home extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Home
-                </Text>
-            </View>
-        )
-    }
-}
-
-class Profile extends Component {
-    render() {
-        return (
-            <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Profile
-                </Text>
-            </View>
-        )
-    }
-}
 export default class Root extends Component {
     constructor(props) {
         super(props);
@@ -65,7 +47,7 @@ export default class Root extends Component {
                             renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/home_normal.png')}/>}
                             onPress={() => this.setState({selectedTab: 'home'})}          >
 
-                            <Home/>
+                            <Homepage/>
                         </TabNavigator.Item>
                         <TabNavigator.Item
                             selected={this.state.selectedTab === 'profile'}
@@ -73,25 +55,29 @@ export default class Root extends Component {
                             renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/category_focus.png')}/>}
                             renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/category_normal.png')}/>}
                             onPress={() => this.setState({selectedTab: 'profile'})}          >
-                            <Profile/>
+                            <Category/>
                         </TabNavigator.Item>
                         <TabNavigator.Item
+                            selected={this.state.selectedTab === 'category'}
                             renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/faxian_focus.png')}/>}
                             renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/faxian_normal.png')}/>}
-                        >
+                            onPress={() => this.setState({selectedTab: 'category'})}
+                        ><Find/>
                         </TabNavigator.Item>
                         <TabNavigator.Item
+                            selected={this.state.selectedTab === 'cart'}
                             renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/cart_focus.png')}/>}
                             renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/cart_normal.png')}/>}
-                                                    >
+                            onPress={() => this.setState({selectedTab: 'cart'})}
+                        ><Cart/>
                         </TabNavigator.Item>
                         <TabNavigator.Item
+                            selected={this.state.selectedTab === 'personal'}
                             renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/personal_focus.png')}/>}
                             renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/personal_normal.png')}/>}
-                        >
-
+                            onPress={() => this.setState({selectedTab: 'personal'})}
+                        ><Personal/>
                         </TabNavigator.Item>
-
                     </TabNavigator>
 
 
