@@ -17,7 +17,6 @@ export default class simulationJD extends Component {
         return (
             <View style={styles.container}>
               <Root/>
-
             </View>
         );
     }

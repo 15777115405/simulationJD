@@ -10,12 +10,40 @@ import {
     StyleSheet,
     Text,
     View,
-    StatusBar
+    StatusBar,
+    Image
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
 import Header from './widget/Header';
 
+class Home extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Home
+                </Text>
+            </View>
+        )
+    }
+}
+
+class Profile extends Component {
+    render() {
+        return (
+            <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Profile
+                </Text>
+            </View>
+        )
+    }
+}
 export default class Root extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {selectedTab: 'home'}
+    }
     render() {
         return (
             <ScrollView
@@ -30,24 +58,39 @@ export default class Root extends Component {
                         Root.js
                     </Text>
 
-                    <TabNavigator>
-                        <TabNavigator className="Item"
-                                      title="首页">
-                        </TabNavigator>
-                        <TabNavigator className="Item"
-                                      title="分类">
+                    <TabNavigator tabBarStyle={styles.tab}>
+                        <TabNavigator.Item
+                            selected={this.state.selectedTab === 'home'}
+                            renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/home_focus.png')}/>}
+                            renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/home_normal.png')}/>}
+                            onPress={() => this.setState({selectedTab: 'home'})}          >
 
-                        </TabNavigator><TabNavigator className="Item"
-                                                     title="发现">
-                    </TabNavigator>
-                        <TabNavigator className="Item"
-                                                     title="购物车">
-                    </TabNavigator>
+                            <Home/>
+                        </TabNavigator.Item>
+                        <TabNavigator.Item
+                            selected={this.state.selectedTab === 'profile'}
 
-                        <TabNavigator className="Item"
-                                      title="我的">
+                            renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/category_focus.png')}/>}
+                            renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/category_normal.png')}/>}
+                            onPress={() => this.setState({selectedTab: 'profile'})}          >
+                            <Profile/>
+                        </TabNavigator.Item>
+                        <TabNavigator.Item
+                            renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/faxian_focus.png')}/>}
+                            renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/faxian_normal.png')}/>}
+                        >
+                        </TabNavigator.Item>
+                        <TabNavigator.Item
+                            renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/cart_focus.png')}/>}
+                            renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/cart_normal.png')}/>}
+                                                    >
+                        </TabNavigator.Item>
+                        <TabNavigator.Item
+                            renderSelectedIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/personal_focus.png')}/>}
+                            renderIcon={() => <Image style={styles.tabIcon} source={require('./images/tabs/personal_normal.png')}/>}
+                        >
 
-                        </TabNavigator>
+                        </TabNavigator.Item>
 
                     </TabNavigator>
 
@@ -63,18 +106,21 @@ export default class Root extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-
         backgroundColor: '#F5FCFF',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
+    tab:{
+        height:55,
+        backgroundColor:'#F5FCFF',
+        paddingBottom:-20,
+        alignItems: 'center'
+
     },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    tabIcon:{
+        width: 30,
+        height: 35,
+        resizeMode: 'stretch',
+        marginTop:5
+
+    }
 });
 
