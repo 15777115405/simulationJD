@@ -6,18 +6,17 @@
 
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View
 } from 'react-native';
-import Root from './src/Root';
-export default class simulationJD extends Component {
+import Header from '../../widget/Header';
+
+export default class Homepage extends Component {
     render() {
         return (
-            <View style={styles.container}>
-              <Root/>
-
+            <View>
+                <Header/>
             </View>
         );
     }
@@ -26,8 +25,9 @@ export default class simulationJD extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'flex-start',
-        backgroundColor: '#d74047',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
     },
     welcome: {
         fontSize: 20,
@@ -41,4 +41,3 @@ const styles = StyleSheet.create({
     },
 });
 
-AppRegistry.registerComponent('simulationJD', () => simulationJD);
