@@ -11,7 +11,7 @@ import {
     View
 } from 'react-native';
 //import Header from '../../widget/Header';
-import Viewpaper from 'react-native-viewpager';
+
 
 const banner_img=[
     require('../../images/banner/1.jpg'),
@@ -25,9 +25,7 @@ export default class Homepage extends Component {
             <View style={styles.container}>
                 {/*<Header/>*/}
                 <Text>Homepage</Text>
-                <Viewpaper
 
-                > </Viewpaper>
 
             </View>
 
