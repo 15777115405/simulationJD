@@ -36,10 +36,6 @@ export default class Root extends Component {
                 <View style={styles.container}>
                     <StatusBar backgroundColor={'rgba(215,64,71,0.9)'} />
                     <Header/>
-                    <Text style={styles.welcome}>
-                        Root.js
-                    </Text>
-
                     <TabNavigator tabBarStyle={styles.tab}>
                         <TabNavigator.Item
                             selected={this.state.selectedTab === 'home'}
@@ -79,10 +75,6 @@ export default class Root extends Component {
                         ><Personal/>
                         </TabNavigator.Item>
                     </TabNavigator>
-
-
-
-
                 </View>
             </ScrollView>
         );

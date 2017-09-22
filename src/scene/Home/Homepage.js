@@ -10,7 +10,7 @@ import {
     Text,
     View
 } from 'react-native';
-import Header from '../../widget/Header';
+//import Header from '../../widget/Header';
 
 export default class Homepage extends Component {
     render() {
