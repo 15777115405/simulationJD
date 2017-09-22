@@ -11,9 +11,8 @@ import {
     View,
     Image
 } from 'react-native';
-import  Swiper from 'react-native-swiper';
 import Header from '../../widget/Header';
-
+import Banner from '../../widget/Banner';
 
 // const banner_img=[
 //     require('../../images/banner/1.jpg'),
@@ -26,23 +25,7 @@ export default class Homepage extends Component {
         return (
             <View style={styles.container}>
                 <Header/>
-
-                <Swiper style={styles.wrapper} height={200}
-                        dot={<View style={{backgroundColor: 'rgba(0,0,0,0.8)', width: 5, height: 5, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: 3, marginBottom: 3}} />}
-                >
-                    <View style={styles.slide1}>
-                        <Image source={require('../../images/banner/1.jpg')}/>
-                    </View>
-                    <View style={styles.slide2}>
-                        <Image source={require('../../images/banner/2.jpg')}/>
-                    </View>
-                    <View style={styles.slide3}>
-                        <Image source={require('../../images/banner/3.jpg')}/>
-                    </View>
-                    <View style={styles.slide3}>
-                        <Image source={require('../../images/banner/4.jpg')}/>
-                    </View>
-                </Swiper>
+                <Banner/>
             </View>
 
         );
@@ -52,9 +35,7 @@ export default class Homepage extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-
-        backgroundColor: 'red',
+        backgroundColor: '#d74047',
     },
     Swiperpaper:{
       backgroundColor:'lightblue',
