@@ -8,13 +8,11 @@ import React, {Component} from 'react';
 import {
     ScrollView,
     StyleSheet,
-    Text,
     View,
     StatusBar,
     Image
 } from 'react-native';
 import TabNavigator from 'react-native-tab-navigator';
-import Header from './widget/Header';
 import Category from './scene/Category/Category.js';
 import Cart from './scene/Cart/Cart.js';
 import Find from './scene/Find/Find.js';
@@ -35,7 +33,6 @@ export default class Root extends Component {
             >
                 <View style={styles.container}>
                     <StatusBar backgroundColor={'rgba(215,64,71,0.9)'} />
-                    <Header/>
                     <TabNavigator tabBarStyle={styles.tab}>
                         <TabNavigator.Item
                             selected={this.state.selectedTab === 'home'}

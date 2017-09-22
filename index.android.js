@@ -8,7 +8,9 @@ import React, { Component } from 'react';
 import {
     AppRegistry,
     StyleSheet,
-    View
+    View,
+    Text,
+    Image
 } from 'react-native';
 import Root from './src/Root';
 export default class simulationJD extends Component {
@@ -23,20 +25,14 @@ export default class simulationJD extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+       flex: 1,
         justifyContent: 'flex-start',
-        backgroundColor: '#d74047',
+        backgroundColor: 'lightblue',
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    instructions: {
-        textAlign: 'center',
-        color: '#333333',
-        marginBottom: 5,
-    },
+    wrapper:{
+        backgroundColor:'red',
+        height:100
+    }
 });
 
 AppRegistry.registerComponent('simulationJD', () => simulationJD);
